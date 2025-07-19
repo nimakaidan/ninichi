@@ -1,0 +1,16 @@
+name: CI using DockerHub image
+
+on:
+  push: 
+    branches: ["master"]
+
+jobs: 
+   run-docker:
+     run-on: ubuntu-latest
+
+     steps:
+       - name: Pull image from DockerHub
+       - run: docker pull kaidanima/devops-demo:latest
+
+       - name: Run container from image
+       - run: docker run kaidanima/devops-demo:latest
